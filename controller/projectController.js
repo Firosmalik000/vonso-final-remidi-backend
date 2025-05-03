@@ -2,7 +2,7 @@ const Project = require('../model/project');
 
 const index = async (req, res) => {
   try {
-    const data = await Project.find().populate('created_by', 'username');
+    const data = await Project.find().populate('created_by', 'username').populate('programmer', 'username');
     res.status(200).json(data);
   } catch (err) {
     res.status(500).json({ message: `Internal server error : ${err.message}` });
@@ -25,8 +25,8 @@ const getProjectById = async (req, res) => {
 };
 const store = async (req, res) => {
   try {
-    const { title, desc, status, programmer, created_by } = req.body;
-    const newItem = new Project({ title, desc, status, programmer, created_by: req.user.id, created_at: new Date() });
+    const { title, desc, status, programmer, priority } = req.body;
+    const newItem = new Project({ title, desc, status, programmer, priority, created_by: req.user.id, created_at: new Date() });
     await newItem.save();
     res.status(201).json(newItem);
   } catch (err) {

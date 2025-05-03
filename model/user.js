@@ -20,7 +20,6 @@ const userShema = new mongoose.Schema({
     type: String,
     required: true,
     length: 100,
-    default: 'user',
   },
 });
 

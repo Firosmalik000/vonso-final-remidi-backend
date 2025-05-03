@@ -19,6 +19,10 @@ const ProjectSchema = new mongoose.Schema({
     ref: 'User',
     default: null,
   },
+  priority: {
+    type: String,
+    required: true,
+  },
   created_by: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
