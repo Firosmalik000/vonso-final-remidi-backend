@@ -10,7 +10,15 @@ const userRoute = require('./route/userRoute');
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: 'https://vonso-final-remidi.vercel.app', credentials: true }));
+const corsOptions = {
+  origin: 'https://vonso-final-remidi.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // ini penting untuk method OPTIONS
+
 
 const dotenv = require('dotenv');
 dotenv.config();
