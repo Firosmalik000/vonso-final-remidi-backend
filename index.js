@@ -8,10 +8,19 @@ const userRoute = require('./route/userRoute');
 // const jwt = require('jsonwebtoken');
 
 const app = express();
-app.use(express.json());
-
-
 const dotenv = require('dotenv');
+app.use(express.json());
+app.use(
+    cors({
+      origin: [
+        'http://localhost:3000',
+        'https://self-management-xi.vercel.app',
+      ],
+      credentials: true,
+    }),
+  );
+
+
 dotenv.config();
 
 app.use('/api/project', projectRoute);
