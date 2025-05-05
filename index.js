@@ -10,7 +10,7 @@ const userRoute = require('./route/userRoute');
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: 'https://vonso-final-remidi-qpbl.vercel.app/', credentials: true }));
+app.use(cors({ origin: 'https://vonso-final-remidi.vercel.app', credentials: true }));
 
 const dotenv = require('dotenv');
 dotenv.config();
