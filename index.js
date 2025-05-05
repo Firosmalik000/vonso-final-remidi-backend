@@ -14,7 +14,7 @@ app.use(
     cors({
       origin: [
         'http://localhost:3000',
-        'https://self-management-xi.vercel.app',
+        'https://vonso-final-remidi-716k2z1tj-firos-projects.vercel.app/',
       ],
       credentials: true,
     }),
