@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 const mongoose = require('mongoose');
 const projectRoute = require('./route/projectRoute');
 const noteRoute = require('./route/noteRoute');
@@ -10,16 +9,6 @@ const userRoute = require('./route/userRoute');
 
 const app = express();
 app.use(express.json());
-const corsOptions = {
-  origin: 'https://vonso-final-remidi.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-
-// Penting: handle preflight OPTIONS
-app.options('*', cors(corsOptions));
 
 
 const dotenv = require('dotenv');
