@@ -13,7 +13,7 @@ const dotenv = require('dotenv');
 app.use(express.json());
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://vonso-final-remidi-qpbl.vercel.app'],
+    origin: ['http://localhost:3000', 'https://project-management-production-fc07.up.railway.app'],
     credentials: true,
   })
 );
