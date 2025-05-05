@@ -4,6 +4,7 @@ const projectRoute = require('./route/projectRoute');
 const noteRoute = require('./route/noteRoute');
 const agendaRoute = require('./route/agendaRoute');
 const userRoute = require('./route/userRoute');
+const cors = require('cors');
 // const bcrypt = require('bcrypt');
 // const jwt = require('jsonwebtoken');
 
@@ -11,15 +12,11 @@ const app = express();
 const dotenv = require('dotenv');
 app.use(express.json());
 app.use(
-    cors({
-      origin: [
-        'http://localhost:3000',
-        'https://vonso-final-remidi.vercel.app',
-      ],
-      credentials: true,
-    }),
-  );
-
+  cors({
+    origin: ['http://localhost:3000', 'https://vonso-final-remidi.vercel.app'],
+    credentials: true,
+  })
+);
 
 dotenv.config();
 
