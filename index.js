@@ -17,7 +17,9 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // ini penting untuk method OPTIONS
+
+// Penting: handle preflight OPTIONS
+app.options('*', cors(corsOptions));
 
 
 const dotenv = require('dotenv');
